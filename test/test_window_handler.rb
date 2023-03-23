@@ -3,7 +3,7 @@
 
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
-require_relative "window_handler"
+require_relative "../src/window_handler"
 
 window = GameOfLife::Window.new(width: 1600, height: 1000, resizable: false)
 

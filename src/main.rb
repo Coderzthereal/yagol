@@ -7,5 +7,5 @@ require "yaml"
 
 require_relative "game_of_life"
 
-opts = YAML.load_file("config.yml")
+opts = YAML.load_file("../cfg/main.yml")
 GameOfLife.new(**opts).show
