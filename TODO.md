@@ -9,7 +9,7 @@
 
 ## Internal
 
- - [ ] Update file structure
+ - [x] Update file structure
  - [ ] Write tests
  - [ ] Set up pipeline
     - [ ] Bundler
