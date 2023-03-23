@@ -9,6 +9,13 @@
 
 ## Internal
 
+ - [ ] Update file structure
+ - [ ] Write tests
+ - [ ] Set up pipeline
+    - [ ] Bundler
+    - [ ] Run tests
+    - [ ] Code coverage, other metrics, etc
+    - [ ] Build process?
  - [ ] Implement #needs_redraw? to save draw cycles in between world ticks and when paused
  - [ ] Color system
     - [ ] Prototype
