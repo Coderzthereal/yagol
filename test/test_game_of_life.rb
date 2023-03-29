@@ -2,24 +2,27 @@ require "yaml"
 require_relative "../src/game_of_life"
 
 # Stub (turn into mock)
-GameOfLife::Window = Class.new # To redefine entire class instead of adding to it
+WindowClass, GameOfLife::Window = GameOfLife::Window, Class.new # To redefine entire class instead of adding to it
 class GameOfLife::Window
   attr_reader :called
-  def initialize(**kwargs) = @called = {}
+  def initialize(**kwargs)
+    @called = {}
+    @window = WindowClass.new(**kwargs)
+  end
 
-  def method_missing(method, *args, **kwargs, &block) = @called[method] = [args, kwargs, block]
+  def method_missing(...) = @called[store(...)] = @window.send(...)
 
-  def respond_to_missing?(...) = true
+  def respond_to_missing?(...) = @window.respond_to?(...)
+
+  private def store(first_arg = nil, *args, **kwargs, &block) = [
+    first_arg, args, kwargs, block
+  ]
 end
 
 opts = YAML.load_file("../cfg/main.yml")
 game = GameOfLife.new(**opts)
 
 # Just to see what we're working with
-begin
-  game.show
-  pp game.window.called
-rescue Exception => e
-  pp game.window.called
-  raise e
-end
+game.show
+puts
+pp game.window.called
