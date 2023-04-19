@@ -1,0 +1,21 @@
+---
+# Window properties
+:width: 600
+:height: 600
+:scale: 10
+:resizable: false
+:wrap: true
+# Game properties
+:tick_speed: 10
+:world_size:
+  - 10
+  - 10
+# Draw properties
+:colors:
+  :bg: white
+  :tiles: black
+  :box: gray
+  :box_border: none
+# :box_border:
+#    - :thickness: 4
+#    - :margin: 0
