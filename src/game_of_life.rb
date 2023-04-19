@@ -3,6 +3,7 @@
 
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
+require "bundler/setup"
 require "set"
 
 require_relative "window_handler"
@@ -10,7 +11,7 @@ require_relative "draw_primitives"
 
 class GameOfLife
   include DrawingPrimitives
-  attr_reader :all_tiles
+  attr_reader :all_tiles, :window
   attr_accessor :paused
   def initialize(density_modifier = 20, tick_speed: 10, scale: 10, world_size: [800, 800], colors: {bg: :black, tiles: :white}, wrap: true, **kwargs)
     @tick_speed = tick_speed
